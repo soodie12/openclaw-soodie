@@ -1,7 +1,7 @@
 FROM ghcr.io/openclaw/openclaw:latest
 
-# Use the exact subcommand structure requested by the OpenClaw parser
-RUN openclaw setup --non-interactive --accept-risk --skip-health
+# Plain setup writes the valid JSON file baseline without triggering health probes
+RUN openclaw setup
 
-# Start the gateway natively using the bypass flag
+# Launch the gateway using the unconfigured bypass flag
 CMD ["openclaw", "gateway", "--allow-unconfigured"]
