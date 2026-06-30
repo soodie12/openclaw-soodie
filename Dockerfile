@@ -1,7 +1,7 @@
 FROM ghcr.io/openclaw/openclaw:latest
 
-# Plain setup writes the valid JSON file baseline without triggering health probes
+# Build the configuration template natively
 RUN openclaw setup
 
-# Launch the gateway using the unconfigured bypass flag
-CMD ["openclaw", "gateway", "--allow-unconfigured"]
+# Force the gateway to bind globally to 0.0.0.0 on port 18789
+CMD ["openclaw", "gateway", "--allow-unconfigured", "--bind", "0.0.0.0", "--port", "18789"]
