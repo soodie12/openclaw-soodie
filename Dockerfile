@@ -1,7 +1,7 @@
 FROM ghcr.io/openclaw/openclaw:latest
 
-# Use the correct native setup tool to initialize a flawless local workspace
-RUN openclaw setup --non-interactive --accept-risk --mode local
+# Force OpenClaw to build a clean local config file while skipping the live network test
+RUN openclaw setup --non-interactive --accept-risk --mode local --skip-health
 
-# Start the gateway with the unconfigured bypass flag
+# Start the gateway natively using the bypass flag
 CMD ["openclaw", "gateway", "--allow-unconfigured"]
