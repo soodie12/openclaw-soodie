@@ -34,7 +34,9 @@
   "channels": {
     "telegram": {
       "enabled": true,
-      "botToken": "${TELEGRAM_BOT_TOKEN}"
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "dmPolicy" : "allowlist",
+      "allowFrom": ["tg:7009229473"]
     }
   }
 }
