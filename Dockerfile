@@ -1,7 +1,7 @@
 FROM ghcr.io/openclaw/openclaw:latest
 
-# Build the configuration template natively
+# Build the configuration baseline natively
 RUN openclaw setup
 
-# Force the gateway to bind globally to 0.0.0.0 on port 18789
-CMD ["openclaw", "gateway", "--allow-unconfigured", "--bind", "0.0.0.0", "--port", "18789"]
+# Use OpenClaw's valid "auto" binding flag along with the port definition
+CMD ["openclaw", "gateway", "--allow-unconfigured", "--bind", "auto", "--port", "18789"]
