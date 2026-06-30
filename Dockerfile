@@ -1,7 +1,7 @@
 FROM ghcr.io/openclaw/openclaw:latest
 
-# Force OpenClaw to build a clean local config file while skipping the live network test
-RUN openclaw setup --non-interactive --accept-risk --mode local --skip-health
+# Use the exact subcommand structure requested by the OpenClaw parser
+RUN openclaw setup local --non-interactive --accept-risk
 
 # Start the gateway natively using the bypass flag
 CMD ["openclaw", "gateway", "--allow-unconfigured"]
