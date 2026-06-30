@@ -1,7 +1,7 @@
 FROM ghcr.io/openclaw/openclaw:latest
 
-# Copy your working model configuration into the application path
-COPY openclaw.json ./openclaw.json
+# Use the native CLI tool to auto-generate a valid, flawless layout shell
+RUN openclaw config init --mode local
 
-# Launch using the global binary route to keep paths perfectly aligned
+# Start the gateway with the unconfigured bypass flag
 CMD ["openclaw", "gateway", "--allow-unconfigured"]
