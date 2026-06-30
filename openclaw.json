@@ -1,0 +1,29 @@
+{
+  "gateway": {
+    "mode": "local",
+    "port": 18789,
+    "bind": "auto",
+    "auth": {
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    }
+  },
+  "models": {
+    "default": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-20b"
+    },
+    "providers": {
+      "groq": {
+        "apiKey": "${GROQ_API_KEY}"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "dmPolicy": "allowlist",
+      "allowFrom": ["${TELEGRAM_ALLOW_FROM}"]
+    }
+  }
+}
