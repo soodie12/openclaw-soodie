@@ -7,33 +7,28 @@
       "token": "${OPENCLAW_GATEWAY_TOKEN}"
     }
   },
-  "models": {
-    "default": {
+  "models": [
+    {
+      "id": "openai/gpt-oss-20b",
+      "name": "openai/gpt-oss-20b",
       "provider": "groq",
-      "model": "openai/gpt-oss-20b"
-    },
-    "list": [
-      {
-        "id": "openai/gpt-oss-20b",
-        "name": "openai/gpt-oss-20b",
-        "contextWindow": 32768,
-        "maxTokens": 4096,
-        "reasoning": false,
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        }
+      "contextWindow": 32768,
+      "maxTokens": 4096,
+      "reasoning": false,
+      "input": [
+        "text"
+      ],
+      "cost": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0
       }
-    ],
-    "providers": {
-      "groq": {
-        "apiKey": "${GROQ_API_KEY}"
-      }
+    }
+  ],
+  "providers": {
+    "groq": {
+      "apiKey": "${GROQ_API_KEY}"
     }
   },
   "channels": {
